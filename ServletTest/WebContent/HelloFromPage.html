@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HelloFromPage</title>
+</head>
+<body>
+	<p>get</p>
+	<form action="HelloFrom" method="GET">
+		<input type="hidden" name="title" value="GET请求"/> 
+		姓名：<input type="text" name="name" /> 
+		<br/> 
+		网址：<input type="text" name="url" /> 
+		<br/> 
+		<input type="submit" value="提交" />
+	</form>
+
+	<br/> <br/> 
+
+	<p>post</p>
+	<form action="HelloFrom" method="POST">
+		<input type="hidden" name="title" value="POST请求"/> 
+		姓名：<input type="text" name="name">
+		<br/>
+		网址：<input type="text" name="url" />
+		<br/>
+		<input type="checkbox" name="baidu"  /> 百度
+		<input type="checkbox" name="google" checked="checked" /> 谷歌
+		<input type="checkbox" name="bing" checked="checked" /> 必应
+		<br/>
+		<input type="submit" value="提交" />
+	</form>
+	
+		<p>测试cookie</p>
+	<form action="SetCookie" method="GET">
+		<input type="hidden" name="title" value="测试cookie"/> 
+		姓名：<input type="text" name="name" /> 
+		<br/> 
+		网址：<input type="text" name="url" /> 
+		<br/> 
+		<input type="submit" value="提交" />
+	</form>
+</body>
+</html>

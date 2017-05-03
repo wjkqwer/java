@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <servlet>
+    <servlet-name>HelloServlet</servlet-name>
+    <servlet-class>com.wjk.test.HelloServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HelloServlet</servlet-name>
+    <url-pattern>/Test/HelloServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>HelloFrom</servlet-name>
+    <servlet-class>com.wjk.test.HelloFrom</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HelloFrom</servlet-name>
+    <url-pattern>/Test/HelloFrom</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SetCookie</servlet-name>
+    <servlet-class>com.wjk.test.SetCookie</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SetCookie</servlet-name>
+    <url-pattern>/Test/SetCookie</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ReadCookie</servlet-name>
+    <servlet-class>com.wjk.test.ReadCookie</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReadCookie</servlet-name>
+    <url-pattern>/Test/ReadCookie</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>DeleteCookie</servlet-name>
+    <servlet-class>com.wjk.test.DeleteCookie</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteCookie</servlet-name>
+    <url-pattern>/Test/DeleteCookie</url-pattern>
+  </servlet-mapping>
+  
+  <filter>
+    <filter-name>FilterClass</filter-name>
+    <filter-class>com.wjk.test.FilterClass</filter-class>
+    <init-param>
+      <param-name>contentType</param-name>
+      <param-value>text/html;charset=UTF-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>FilterClass</filter-name>
+    <url-pattern>/HelloFrom</url-pattern>
+  </filter-mapping>
+</web-app>
