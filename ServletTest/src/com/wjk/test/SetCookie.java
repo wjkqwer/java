@@ -59,6 +59,7 @@ public class SetCookie extends HttpServlet {
 		        "  <li><b>URL£º</b>£º"
 		        + request.getParameter("url") + "\n</li>" +
 		        "</ul>\n" +
+		        "<a href=\"ReadCookie\">Ìø×ªReadCookie</a>\n" +
 		        "</body></html>");
 	}
 
