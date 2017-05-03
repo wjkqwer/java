@@ -6,7 +6,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>HelloServlet</servlet-name>
-    <url-pattern>/Test/HelloServlet</url-pattern>
+    <url-pattern>/ServletTest/HelloServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>HelloFrom</servlet-name>
@@ -14,7 +14,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>HelloFrom</servlet-name>
-    <url-pattern>/Test/HelloFrom</url-pattern>
+    <url-pattern>/ServletTest/HelloFrom</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>SetCookie</servlet-name>
@@ -22,7 +22,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>SetCookie</servlet-name>
-    <url-pattern>/Test/SetCookie</url-pattern>
+    <url-pattern>/ServletTest/SetCookie</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>ReadCookie</servlet-name>
@@ -30,18 +30,24 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>ReadCookie</servlet-name>
-    <url-pattern>/Test/ReadCookie</url-pattern>
+    <url-pattern>/ServletTest/ReadCookie</url-pattern>
   </servlet-mapping>
-  
-   <servlet>
+  <servlet>
     <servlet-name>DeleteCookie</servlet-name>
     <servlet-class>com.wjk.test.DeleteCookie</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>DeleteCookie</servlet-name>
-    <url-pattern>/Test/DeleteCookie</url-pattern>
+    <url-pattern>/ServletTest/DeleteCookie</url-pattern>
   </servlet-mapping>
-  
+  <servlet>
+    <servlet-name>SessionServlet</servlet-name>
+    <servlet-class>com.wjk.test.SessionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionServlet</servlet-name>
+    <url-pattern>/ServletTest/SessionServlet</url-pattern>
+  </servlet-mapping>
   <filter>
     <filter-name>FilterClass</filter-name>
     <filter-class>com.wjk.test.FilterClass</filter-class>
@@ -54,4 +60,7 @@
     <filter-name>FilterClass</filter-name>
     <url-pattern>/HelloFrom</url-pattern>
   </filter-mapping>
+  <session-config>
+    <session-timeout>15</session-timeout>
+  </session-config>
 </web-app>
