@@ -59,6 +59,39 @@ public class DataBaseConnection {
 		return result;
 	}
 	
+	
+	public static void closeConn(Connection connection) {
+		try {
+			if(connection!=null){
+				connection.close();
+				connection=null;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void closeStmt(Statement statement) {
+		try {
+			if(statement!=null){
+				statement.close();
+				statement=null;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void closeResultSet(ResultSet resultSet) {
+		try {
+			if(resultSet!=null){
+				resultSet.close();
+				resultSet=null;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }
 
 

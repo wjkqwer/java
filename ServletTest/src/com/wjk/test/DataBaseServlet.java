@@ -49,31 +49,25 @@ public class DataBaseServlet extends HttpServlet {
 		// 展开结果集数据库
 		try {
 			while (result.next()) {
-				// 通过字段检索
-				int id = result.getInt("id");
-				String name = result.getString("name");
-				int age = result.getInt("age");
-				String sex = result.getString("sex");
-				String country = result.getString("country");
 				// 输出数据
-				out.println("ID: " + id);
-				out.println(" -- name: " + name);
-				out.println(" -- age: " + age);
-				out.println(" -- sex: " + sex);
-				out.println(" -- country: " + country);
+				out.println("ID: " + result.getInt("id"));
+				out.println(" // name: " + result.getString("name"));
+				out.println(" // age: " + result.getInt("age"));
+				out.println(" // sex: " + result.getString("sex"));
+				out.println(" // country: " + result.getString("country"));
 				out.println("<br />");
 			}
 
 			out.println("</body></html>");
 
-			// 完成后关闭
-			result.close();
-			statement.close();
-			connection.close();
-
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} 
+		} finally {
+			// 完成后关闭
+			DataBaseConnection.closeResultSet(result);
+			DataBaseConnection.closeStmt(statement);
+			DataBaseConnection.closeConn(connection);
+		}
 
 	}
 
