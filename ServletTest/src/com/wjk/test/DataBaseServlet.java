@@ -29,11 +29,8 @@ public class DataBaseServlet extends HttpServlet {
 	static final String USER = "root";
 	static final String PASS = "123456";
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-		Connection connection = null;
-		Statement statement = null;
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
@@ -43,17 +40,14 @@ public class DataBaseServlet extends HttpServlet {
 		out.println("</head>");
 		out.println("<body>");
 
-		try {
-			// 注册 JDBC 驱动器
-			Class.forName(JDBC_DRIVER);
-			// 打开一个连接
-			connection = DriverManager.getConnection(DB_URL, USER, PASS);
-			// 执行SQL查询
-			statement = connection.createStatement();
-			String sql = "SELECT id, name, age,sex,country FROM people";
-			ResultSet result = statement.executeQuery(sql);
+		String sql = "SELECT id, name, age,sex,country FROM people";
 
-			// 展开结果集数据库
+		Connection connection = DataBaseConnection.getConn();
+		Statement statement = DataBaseConnection.getStatement(connection);
+		ResultSet result = DataBaseConnection.getResultSet(statement, sql);
+
+		// 展开结果集数据库
+		try {
 			while (result.next()) {
 				// 通过字段检索
 				int id = result.getInt("id");
@@ -69,6 +63,7 @@ public class DataBaseServlet extends HttpServlet {
 				out.println(" -- country: " + country);
 				out.println("<br />");
 			}
+
 			out.println("</body></html>");
 
 			// 完成后关闭
@@ -76,29 +71,14 @@ public class DataBaseServlet extends HttpServlet {
 			statement.close();
 			connection.close();
 
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
-			// 最后是用于关闭资源的块
-			try {
-				if (statement != null)
-					statement.close();
-			} catch (SQLException se2) {
-			}
-			try {
-				if (connection != null)
-					connection.close();
-			} catch (SQLException se) {
-				se.printStackTrace();
-			}
-		}
+		} 
 
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
 
