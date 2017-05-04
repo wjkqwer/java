@@ -31,8 +31,8 @@
 		<input type="submit" value="提交" />
 	</form>
 	
-		<p>测试cookie</p>
-	<form action="SetCookie" method="GET">
+	<p>测试cookie</p>
+	<form action="SetCookie" method="POST">
 		<input type="hidden" name="title" value="测试cookie"/> 
 		姓名：<input type="text" name="name" /> 
 		<br/> 
@@ -40,5 +40,21 @@
 		<br/> 
 		<input type="submit" value="提交" />
 	</form>
+	
+	<p>写入数据库测试</p>
+	<form action="WriteDataBaseServlet" method="POST">
+		ID：<input type="text" name="id">
+		<br/>
+		姓名：<input type="text" name="name">
+		<br/>
+		年龄：<input type="text" name="age">
+		<br/>
+		性别：<input type="text" name="sex">
+		<br/>
+		国家：<input type="text" name="country" />
+		<br/>
+		<input type="submit" value="提交" />
+	</form>
+	
 </body>
 </html>

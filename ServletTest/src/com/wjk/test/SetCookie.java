@@ -18,35 +18,28 @@ import javax.servlet.http.HttpServletResponse;
 public class SetCookie extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public SetCookie() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// ÉèÖÃÏìÓ¦ÄÚÈİÀàĞÍ
-        response.setContentType("text/html;charset=UTF-8");
+		// è®¾ç½®å“åº”å†…å®¹ç±»å‹
+		response.setContentType("text/html;charset=UTF-8");
         
-		Cookie nameCookie = new Cookie("name", URLEncoder.encode(request.getParameter("name"), "UTF-8"));
-		Cookie urlCookie = new Cookie("url", URLEncoder.encode(request.getParameter("url"), "UTF-8"));
+		request.setCharacterEncoding("utf-8");
+		
+		String name=request.getParameter("name");
+		String url=request.getParameter("url");
+		
+		Cookie nameCookie = new Cookie("name", URLEncoder.encode(name, "UTF-8"));
+		Cookie urlCookie = new Cookie("url", URLEncoder.encode(url, "UTF-8"));
 
-		// ÉèÖÃnameCookie¹ıÆÚÈÕÆÚ£¬urlCookie²»ÉèÖÃ
+		// è®¾ç½®nameCookieè¿‡æœŸæ—¥æœŸï¼ŒurlCookieä¸è®¾ç½®
 		nameCookie.setMaxAge(60 * 60 * 24);
 
-		// ÔÚÏìÓ¦Í·ÖĞÌí¼ÓÁ½¸ö Cookie
+		// åœ¨å“åº”å¤´ä¸­æ·»åŠ ä¸¤ä¸ª Cookie
 		response.addCookie(nameCookie);
 		response.addCookie(urlCookie);
 		
 		PrintWriter out = response.getWriter();
-		String title = "ÉèÖÃ Cookie ÊµÀı";
+		String title = "è®¾ç½® Cookie å®ä¾‹";
 		String docType = "<!DOCTYPE html>\n";
 		out.println(docType +
 		        "<html>\n" +
@@ -54,19 +47,15 @@ public class SetCookie extends HttpServlet {
 		        "<body bgcolor=\"#f0f0f0\">\n" +
 		        "<h1 align=\"center\">" + title + "</h1>\n" +
 		        "<ul>\n" +
-		        "  <li><b>name£º</b>£º"
-		        + request.getParameter("name") + "\n</li>" +
-		        "  <li><b>URL£º</b>£º"
-		        + request.getParameter("url") + "\n</li>" +
+		        "  <li><b>nameï¼š</b>ï¼š"
+		        + name + "\n</li>" +
+		        "  <li><b>URLï¼š</b>ï¼š"
+		        + url + "\n</li>" +
 		        "</ul>\n" +
-		        "<a href=\"ReadCookie\">Ìø×ªReadCookie</a>\n" +
+		        "<a href=\"ReadCookie\">è·³è½¬ReadCookie</a>\n" +
 		        "</body></html>");
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doGet(request, response);

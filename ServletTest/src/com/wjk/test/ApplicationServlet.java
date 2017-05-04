@@ -18,24 +18,13 @@ import javax.servlet.http.HttpServletResponse;
 public class ApplicationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public ApplicationServlet() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
+	
 	protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		
 		ServletContext application=this.getServletContext();
 		
-		//´ÓAttributeÖĞÈ¡keyÎªaccessCountµÄÖµ
+		//ä»Attributeä¸­å–keyä¸ºaccessCountçš„å€¼
 		Integer accessCount=(Integer) application.getAttribute("accessCount");
 		if(accessCount==null) {
 			accessCount=new Integer(0);
@@ -48,23 +37,19 @@ public class ApplicationServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
 		out.println("<head>");
-		out.println("<title>SessionÈ«¾Ö×·×Ù</title>");
+		out.println("<title>Sessionå…¨å±€è¿½è¸ª</title>");
 		out.println("</head>");
 		out.println("<body>");
-		out.println("<h3>SessionÈ«¾Ö×·×Ù</h3>");
-		out.println("<h4>´ÎÊı£º"+accessCount+"</h4>");
+		out.println("<h3>Sessionå…¨å±€è¿½è¸ª</h3>");
+		out.println("<h4>æ¬¡æ•°ï¼š"+accessCount+"</h4>");
 		out.println("</body></html>");
 		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		doGet(request, response);
 	}
 
 }

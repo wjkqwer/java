@@ -31,7 +31,7 @@ public class SessionServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		//flaseÖ»ÊÇÈ¥È¡Session£¬²»´æÔÚµÄ»°²»»áÈ¥´´½¨£»trueÈ¡Session£¬²»´æÔÚ»á´´½¨
+		//falseåªæ˜¯å»å–Sessionï¼Œä¸å­˜åœ¨çš„è¯ä¸ä¼šå»åˆ›å»ºï¼›trueå–Sessionï¼Œä¸å­˜åœ¨ä¼šåˆ›å»º
 		HttpSession mySession=request.getSession(true);
 
 		response.setContentType("text/html;charset=UTF-8");
@@ -39,20 +39,20 @@ public class SessionServlet extends HttpServlet {
 		PrintWriter out=response.getWriter();
 		out.println("<html>");
 		out.println("<head>");
-		out.println("<title>Session²âÊÔ</title>");
+		out.println("<title>Sessionæµ‹è¯•</title>");
 		out.println("</head>");
 		out.println("<body>");
-		out.println("<h3>SessionĞÅÏ¢</h3>");
-		out.println("ÊÇ·ñÊÇĞÂSession£º"+mySession.isNew());
-		out.println("<br/>Session ID£º"+mySession.getId());
-		out.println("<br/>Session´´½¨Ê±¼ä£º"+new Date(mySession.getCreationTime()));
-		out.println("<br/>Session×îºóÊ¹ÓÃÊ±¼ä£º"+new Date(mySession.getLastAccessedTime()));
-		out.println("<h3>·¢ËÍµÄSessionĞÅÏ¢</h3>");
-		out.println("Òª·¢ËÍ¸ø·şÎñÆ÷µÄSession ID£º"+request.getRequestedSessionId());
-		out.println("<br/>ÊÇ·ñÓĞ±£´æÔÚCookieÖĞµÄSession ID£º"+request.isRequestedSessionIdFromCookie());
-		out.println("<br/>ÊÇ·ñÓĞ±£´æÔÚURLÖĞµÄSession ID£º"+request.isRequestedSessionIdFromURL());
-		out.println("<br/>ÊÇ·ñÓĞÓĞĞ§µÄSession ID£º"+request.isRequestedSessionIdValid());
-		out.println("<br/><a href="+response.encodeURL("SessionServlet")+">refresh</a>"); //1×ªÂë  2ÔÚurlºóÃæ¼ÓÈëSessionId(ÔÚä¯ÀÀÆ÷²»Ö§³ÖCookieÊ±£¬²Å»áÔÚurlºó¼ÓSessionId)
+		out.println("<h3>Sessionä¿¡æ¯</h3>");
+		out.println("æ˜¯å¦æ˜¯æ–°Sessionï¼š"+mySession.isNew());
+		out.println("<br/>Session IDï¼š"+mySession.getId());
+		out.println("<br/>Sessionåˆ›å»ºæ—¶é—´ï¼š"+new Date(mySession.getCreationTime()));
+		out.println("<br/>Sessionæœ€åä½¿ç”¨æ—¶é—´ï¼š"+new Date(mySession.getLastAccessedTime()));
+		out.println("<h3>å‘é€çš„Sessionä¿¡æ¯</h3>");
+		out.println("è¦å‘é€ç»™æœåŠ¡å™¨çš„Session IDï¼š"+request.getRequestedSessionId());
+		out.println("<br/>æ˜¯å¦æœ‰ä¿å­˜åœ¨Cookieä¸­çš„Session IDï¼š"+request.isRequestedSessionIdFromCookie());
+		out.println("<br/>æ˜¯å¦æœ‰ä¿å­˜åœ¨URLä¸­çš„Session IDï¼š"+request.isRequestedSessionIdFromURL());
+		out.println("<br/>æ˜¯å¦æœ‰æœ‰æ•ˆçš„Session IDï¼š"+request.isRequestedSessionIdValid());
+		out.println("<br/><a href="+response.encodeURL("SessionServlet")+">refresh</a>"); //1è½¬ç   2åœ¨urlåé¢åŠ å…¥SessionId(åœ¨æµè§ˆå™¨ä¸æ”¯æŒCookieæ—¶ï¼Œæ‰ä¼šåœ¨urlååŠ SessionId)
 		out.println("</body></html>");
 		out.close();
 		

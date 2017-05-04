@@ -26,7 +26,7 @@ public class HelloServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 使用 GBK 设置中文正常显示
+		// 浣跨敤 GBK 璁剧疆涓枃姝ｅ父鏄剧ず
 		response.setCharacterEncoding("GBK");
 		response.getWriter().write("hello servlet");
 	}

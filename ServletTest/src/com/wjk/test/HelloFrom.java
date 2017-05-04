@@ -30,13 +30,14 @@ public class HelloFrom extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("doGet");
-		// ÉèÖÃÏìÓ¦ÄÚÈİÀàĞÍ
+		// è®¾ç½®å“åº”å†…å®¹ç±»å‹
 //		response.setContentType("text/html;charset=UTF-8");
 		
 		PrintWriter out=response.getWriter();
-		//Èç¹û±íµ¥Ìá½»µÄÊı¾İÖĞÓĞÖĞÎÄÊı¾İÔòĞèÒª×ªÂë£º
+		//å¦‚æœè¡¨å•æäº¤çš„æ•°æ®ä¸­æœ‰ä¸­æ–‡æ•°æ®åˆ™éœ€è¦è½¬ç ï¼š
 		String title=new String(request.getParameter("title").getBytes("ISO8859-1"),"UTF-8");
 		String name=new String(request.getParameter("name").getBytes("ISO8859-1"),"UTF-8");
+		String url=new String(request.getParameter("url").getBytes("ISO8859-1"),"UTF-8");
 				
 		String docType = "<!DOCTYPE html> \n";
 		out.println(docType+
@@ -45,17 +46,17 @@ public class HelloFrom extends HttpServlet {
 			    "<body bgcolor=\"#f0f0f0\">\n" +
 			    "<h1 align=\"center\">" + title + "</h1>\n" +
 			    "<ul>\n" +
-			    "  <li><b>Õ¾µãÃû</b>£º"
+			    "  <li><b>ç«™ç‚¹å</b>ï¼š"
 			    + name + "\n" +
-			    "  <li><b>ÍøÖ·</b>£º"
-			    + request.getParameter("url") + "\n" +
+			    "  <li><b>ç½‘å€</b>ï¼š"
+			    + url + "\n" +
 			    "</ul>\n" +
 			    "<ul>\n" +
-	            "  <li><b>°Ù¶È£º</b>: "
+	            "  <li><b>ç™¾åº¦ï¼š</b>: "
 	            + request.getParameter("baidu") + "\n" +
-	            "  <li><b>¹È¸è£º</b>: "
+	            "  <li><b>è°·æ­Œï¼š</b>: "
 	            + request.getParameter("google") + "\n" +
-	            "  <li><b>±ØÓ¦£º</b>: "
+	            "  <li><b>å¿…åº”ï¼š</b>: "
 	            + request.getParameter("bing") + "\n" +
 	            "</ul>\n" +
 			    "</body></html>");

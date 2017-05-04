@@ -23,11 +23,11 @@ public class FilterClass implements Filter {
 
 	@Override
 	public void init(FilterConfig config) throws ServletException {
-		// »ñÈ¡³õÊ¼»¯²ÎÊı
+		// è·å–åˆå§‹åŒ–å‚æ•°
 		contentType = config.getInitParameter("contentType");
 
-		// Êä³ö³õÊ¼»¯²ÎÊı
-		System.out.println("Ãû³Æ: " + contentType);
+		// è¾“å‡ºåˆå§‹åŒ–å‚æ•°
+		System.out.println("åç§°: " + contentType);
 	}
 
 	@Override
@@ -35,10 +35,10 @@ public class FilterClass implements Filter {
 			throws IOException, ServletException {
 		System.out.println("doFilter");
 		
-		//Àı:ÔÚÕâÀïÉèÖÃContentType£¬È»ºó°Ñ´Ë¹ıÂËÆ÷ÉèÖÃÎªÊÊÓÃËùÓĞServlet£¬¾Í²»ÓÃÔÚÃ¿¸öServletÖĞ¶¼Ğ´Í¬ÑùµÄ´úÂë
+		//ä¾‹:åœ¨è¿™é‡Œè®¾ç½®ContentTypeï¼Œç„¶åæŠŠæ­¤è¿‡æ»¤å™¨è®¾ç½®ä¸ºé€‚ç”¨æ‰€æœ‰Servletï¼Œå°±ä¸ç”¨åœ¨æ¯ä¸ªServletä¸­éƒ½å†™åŒæ ·çš„ä»£ç 
 		response.setContentType(contentType);
 
-		// ÔÚÕâÀï½øĞĞ¹ıÂË´¦Àí£¬Íê³ÉºóÔÚ°ÑÇëÇó´«»Ø¹ıÂËÁ´
+		// åœ¨è¿™é‡Œè¿›è¡Œè¿‡æ»¤å¤„ç†ï¼Œå®Œæˆååœ¨æŠŠè¯·æ±‚ä¼ å›è¿‡æ»¤é“¾
 		chain.doFilter(request, response);
 	}
 

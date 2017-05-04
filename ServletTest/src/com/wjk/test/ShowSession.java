@@ -18,17 +18,6 @@ import javax.servlet.http.HttpSession;
 public class ShowSession extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ShowSession() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		
@@ -48,14 +37,14 @@ public class ShowSession extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
 		out.println("<head>");
-		out.println("<title>Session×·×Ù</title>");
+		out.println("<title>Sessionè¿½è¸ª</title>");
 		out.println("</head>");
 		out.println("<body>");
-		out.println("<h3>Session×·×Ù,Í¬Ò»¸öä¯ÀÀÆ÷´°¿Ú¹²Ïí</h3>");
+		out.println("<h3>Sessionè¿½è¸ª,åŒä¸€ä¸ªæµè§ˆå™¨çª—å£å…±äº«</h3>");
 		out.println("<h3>"+heading+"</h3>");
-		out.println("<h4>´´½¨Ê±¼ä£º"+new Date(mySession.getCreationTime())+"</h4>");
-		out.println("<h4>×îºóÊ¹ÓÃÊ±¼ä£º"+new Date(mySession.getLastAccessedTime())+"</h4>");
-		out.println("<h4>´ÎÊı£º"+accessCount+"</h4>");
+		out.println("<h4>åˆ›å»ºæ—¶é—´ï¼š"+new Date(mySession.getCreationTime())+"</h4>");
+		out.println("<h4>æœ€åä½¿ç”¨æ—¶é—´ï¼š"+new Date(mySession.getLastAccessedTime())+"</h4>");
+		out.println("<h4>æ¬¡æ•°ï¼š"+accessCount+"</h4>");
 		out.println("</body></html>");
 	}
 
@@ -63,7 +52,8 @@ public class ShowSession extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
+		doGet(request, response);
 	}
 
 }

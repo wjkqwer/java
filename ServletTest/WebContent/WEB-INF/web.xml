@@ -8,6 +8,8 @@
     <servlet-name>HelloServlet</servlet-name>
     <url-pattern>/ServletTest/HelloServlet</url-pattern>
   </servlet-mapping>
+  
+  
   <servlet>
     <servlet-name>HelloFrom</servlet-name>
     <servlet-class>com.wjk.test.HelloFrom</servlet-class>
@@ -16,6 +18,18 @@
     <servlet-name>HelloFrom</servlet-name>
     <url-pattern>/ServletTest/HelloFrom</url-pattern>
   </servlet-mapping>
+  
+ 
+ <servlet>
+    <servlet-name>ApplicationServlet</servlet-name>
+    <servlet-class>com.wjk.test.ApplicationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ApplicationServlet</servlet-name>
+    <url-pattern>/ServletTest/ApplicationServlet</url-pattern>
+  </servlet-mapping>
+ 
+ 
   <servlet>
     <servlet-name>SetCookie</servlet-name>
     <servlet-class>com.wjk.test.SetCookie</servlet-class>
@@ -24,6 +38,8 @@
     <servlet-name>SetCookie</servlet-name>
     <url-pattern>/ServletTest/SetCookie</url-pattern>
   </servlet-mapping>
+  
+  
   <servlet>
     <servlet-name>ReadCookie</servlet-name>
     <servlet-class>com.wjk.test.ReadCookie</servlet-class>
@@ -32,6 +48,8 @@
     <servlet-name>ReadCookie</servlet-name>
     <url-pattern>/ServletTest/ReadCookie</url-pattern>
   </servlet-mapping>
+  
+  
   <servlet>
     <servlet-name>DeleteCookie</servlet-name>
     <servlet-class>com.wjk.test.DeleteCookie</servlet-class>
@@ -40,6 +58,8 @@
     <servlet-name>DeleteCookie</servlet-name>
     <url-pattern>/ServletTest/DeleteCookie</url-pattern>
   </servlet-mapping>
+  
+  
   <servlet>
     <servlet-name>SessionServlet</servlet-name>
     <servlet-class>com.wjk.test.SessionServlet</servlet-class>
@@ -48,6 +68,38 @@
     <servlet-name>SessionServlet</servlet-name>
     <url-pattern>/ServletTest/SessionServlet</url-pattern>
   </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>ShowSession</servlet-name>
+    <servlet-class>com.wjk.test.ShowSession</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowSession</servlet-name>
+    <url-pattern>/ServletTest/ShowSession</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>DataBaseServlet</servlet-name>
+    <servlet-class>com.wjk.test.DataBaseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DataBaseServlet</servlet-name>
+    <url-pattern>/ServletTest/DataBaseServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+    <servlet>
+    <servlet-name>WriteDataBaseServlet</servlet-name>
+    <servlet-class>com.wjk.test.WriteDataBaseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WriteDataBaseServlet</servlet-name>
+    <url-pattern>/ServletTest/WriteDataBaseServlet</url-pattern>
+  </servlet-mapping>
+  
+  
   <filter>
     <filter-name>FilterClass</filter-name>
     <filter-class>com.wjk.test.FilterClass</filter-class>
@@ -60,6 +112,8 @@
     <filter-name>FilterClass</filter-name>
     <url-pattern>/HelloFrom</url-pattern>
   </filter-mapping>
+  
+  
   <session-config>
     <session-timeout>15</session-timeout>
   </session-config>
