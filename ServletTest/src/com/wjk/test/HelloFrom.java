@@ -17,20 +17,10 @@ import javax.servlet.http.HttpServletResponse;
 public class HelloFrom extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public HelloFrom() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-    
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("doGet");
-		// 设置响应内容类型
+		
+		// 设置响应内容类型,这设置了过滤
 //		response.setContentType("text/html;charset=UTF-8");
 		
 		PrintWriter out=response.getWriter();
@@ -59,15 +49,12 @@ public class HelloFrom extends HttpServlet {
 	            "  <li><b>必应：</b>: "
 	            + request.getParameter("bing") + "\n" +
 	            "</ul>\n" +
-			    "</body></html>");
+				"</body></html>");
 		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
